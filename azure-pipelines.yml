@@ -21,7 +21,9 @@ stages:
     jobs:
       - job: run_angularclighpages
         steps:
-        - script: 
+        - script:
+            npm install -g @angular/cli 
+            ng add angular-cli-ghpages
             ng deploy
 
   - stage: deploy_dev

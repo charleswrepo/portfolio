@@ -11,26 +11,26 @@ pool:
 
 stages:
   - stage: build
-    displayname: Building package
+    displayName: Building package
     jobs:
-      - job:
+      - job: build_checklist
         steps:
-        - script: |
-          npm i
-          ng deploy
+        - script: 
+            npm i
+            ng deploy
         - publish: dist
           artifact: dist
 
   - stage: deploy_dev
     displayName: Deploy to development
     jobs:
-      - job:
+      - job: deploy_dev_checklist
         steps:
           - script: echo Hello, dev-world!
 
   - stage: deploy_prod
     displayName: Deploy to production
     jobs:
-      - job:
+      - job: deploy_prod_checklist
         steps:
           - script: echo Hello, prod-world!

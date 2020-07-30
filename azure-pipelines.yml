@@ -11,10 +11,15 @@ pool:
 
 stages:
   - stage: build
+    displayname: Building package
     jobs:
       - job:
         steps:
-          - script: echo Hello, build-world!
+        - script: |
+          npm i
+          ng deploy
+        -publish: dist
+         artifact: dist
 
   - stage: deploy_dev
     displayName: Deploy to development

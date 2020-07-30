@@ -22,9 +22,13 @@ stages:
       - job: run_angularclighpages
         steps:
         - script:
+            npm install --only-dev
             npm install -g @angular/cli 
             ng add angular-cli-ghpages
             ng deploy
+        - task: PublishBuildArtifacts@1
+          inputs:
+              PathtoPublish: '$(System.DefaultWorkingDirectory)'
 
   - stage: deploy_dev
     displayName: Deploy to development

@@ -18,8 +18,8 @@ stages:
         - script: |
           npm i
           ng deploy
-        -publish: dist
-         artifact: dist
+        - publish: dist
+          artifact: dist
 
   - stage: deploy_dev
     displayName: Deploy to development

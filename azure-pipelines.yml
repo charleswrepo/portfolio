@@ -4,7 +4,13 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-  - master
+  batch: true
+  branches:
+    include:
+    - master
+
+    exclude:
+    - gh-pages
 
 pool:
   vmImage: "ubuntu-latest"
@@ -13,13 +19,10 @@ stages:
   - stage: build
     displayName: Building package
     jobs:
-      - job: build_checklist
+      - job: run_angularclighpages
         steps:
         - script: 
-            npm i
             ng deploy
-        - publish: dist
-          artifact: dist
 
   - stage: deploy_dev
     displayName: Deploy to development

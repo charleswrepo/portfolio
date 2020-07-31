@@ -27,9 +27,14 @@ steps:
             npm install
         continueOnError: false
         displayName: 'Install Angular'
+
+      - script:
+            ng add angular-cli-ghpages
+        continueOnError: false
+        displayName: 'Install angular-cli-ghpages'
     
       - script: |
-            npm audit --audit-level=moderate
+            npm audit --audit-level=moderate --registry=https://registry.npmjs.org/
         continueOnError: false
         displayName: 'Audit dependency vulnerabilities'
     
@@ -37,11 +42,6 @@ steps:
             npm run lint
         continueOnError: false
         displayName: 'Verify code standards with lint'
-
-      - script:
-            ng add angular-cli-ghpages
-        continueOnError: false
-        displayName: 'Install angular-cli-ghpages'
 
       - script:
             ng deploy --buildHref='https://charleswrepo.github.io/portfolio'

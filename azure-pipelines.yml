@@ -29,17 +29,3 @@ stages:
         - task: PublishBuildArtifacts@1
           inputs:
               PathtoPublish: '$(System.DefaultWorkingDirectory)'
-
-  - stage: deploy_dev
-    displayName: Deploy to development
-    jobs:
-      - job: deploy_dev_checklist
-        steps:
-          - script: echo Hello, dev-world!
-
-  - stage: deploy_prod
-    displayName: Deploy to production
-    jobs:
-      - job: deploy_prod_checklist
-        steps:
-          - script: echo Hello, prod-world!

@@ -29,7 +29,8 @@ steps:
         displayName: 'Install Angular'
 
       - script:
-            ng add angular-cli-ghpages
+            npm install -g angular-cli-ghpages
+            npm install
         continueOnError: false
         displayName: 'Install angular-cli-ghpages'
     

@@ -24,6 +24,7 @@ steps:
     
       - script: |
             npm install -g @angular/cli
+            npm install -g @angular-devkit/build-angular
             npm install
         continueOnError: false
         displayName: 'Install Angular'
@@ -45,7 +46,7 @@ steps:
         displayName: 'Verify code standards with lint'
 
       - script:
-            ng deploy --buildHref='https://charleswrepo.github.io/portfolio'
+            npm run deploy --buildHref='https://charleswrepo.github.io/portfolio'
         continueOnError: false
         displayName: 'Deploy to GitHub Pages'
     

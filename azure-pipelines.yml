@@ -15,17 +15,40 @@ trigger:
 pool:
   vmImage: "windows-latest"
 
-stages:
-  - stage: build
-    displayName: Building package
-    jobs:
-      - job: run_angularclighpages
-        steps:
-        - script:
-            npm install --only-dev
-            npm install -g @angular/cli 
+steps:
+      - task: NodeTool@0
+        inputs:
+            versionSpec: '12.x'
+        continueOnError: false
+        displayName: 'Install Node.js'
+    
+      - script: |
+            npm install -g @angular/cli
+            npm install
+        continueOnError: false
+        displayName: 'Install Angular'
+    
+      - script: |
+            npm audit --audit-level=moderate
+        continueOnError: false
+        displayName: 'Audit dependency vulnerabilities'
+    
+      - script: |
+            npm run lint
+        continueOnError: false
+        displayName: 'Verify code standards with lint'
+
+      - script:
             ng add angular-cli-ghpages
-            ng deploy
-        - task: PublishBuildArtifacts@1
-          inputs:
-              PathtoPublish: '$(System.DefaultWorkingDirectory)'
+        continueOnError: false
+        displayName: 'Install angular-cli-ghpages'
+
+      - script:
+            ng deploy --buildHref='https://charleswrepo.github.io/portfolio'
+        continueOnError: false
+        displayName: 'Deploy to GitHub Pages'
+    
+      - task: PublishBuildArtifacts@1
+        inputs:
+            PathtoPublish: '$(System.DefaultWorkingDirectory)'
+            ArtifactName: 'My Portfolio'

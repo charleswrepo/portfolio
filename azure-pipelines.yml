@@ -40,7 +40,7 @@ steps:
       - task: InstallSSHKey@0
         inputs:
           knownHostsEntry: github.com,140.82.118.3 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ== 
-          sshKeySecureFile: ~/.ssh/id_rsa
+          sshKeySecureFile: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCzbGLT1Eeb1XEXaf2a2INutBYEg2y+5MSbtaACcsxbWTcj9hOxOHeFl4e+cJ7h6Atb+0jLWpGH0HpMB+73F6FYT1tcM2GnAoVZ7exPfrYA51OMmflyJgPzvnGLJvPmdM0rXFhPJ47RDudznaU+1FfjQGfS+7NK62nTgQmkS866t3P1IROWoXZN8vdfocuYkBgnPieCWhkmUOLoAcOiaAJ+O8tTu/vN0BjvhpcSUEzhYHzqfjTg+j28FFYJjuFXVvAloiJ5JQHxrOYeESvHLlKmO4EOU70jEVIU6Tcn4VPr1MqDli32n4Sy5ItY66/h0jYPcDGHM8iM4NSsBLAz1RVl90ueGB7L+N1Nfd5M9o4GMIzpKeAwFSXZIfTDt7g8xZN7q2zmHdIhpFmw65AH+rf4troHzfGSK52nJShM5wKCdoxywCbE8ZIrf1Va0FNtHqo9qSKiszrEPJydhi7y4ghvg66cwWw9mLDxwEIDPVXvbIgWiU6DaUvlzBC0drH0g4nXJSIsdd13Gbrldg9coCmKQ4u+LREWatdsGiOpfI7gN1sAIgVVKciOUmYd3qbnZkQeOYNFew/eXi2QSh0bWnj33F+kjqH9W5H0BIG0z2KSHWq+DtfmyuaZaZ7BeK6KPSy3UTWqdotFJe+dkni+VotTexuoLqK4Vo7KemFbpD/3Jw== crwatson@live.co.uk
         continueOnError: false
         displayName: 'Install SSH Key'
 

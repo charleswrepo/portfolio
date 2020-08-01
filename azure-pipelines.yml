@@ -41,7 +41,7 @@ steps:
         displayName: 'Audit dependency vulnerabilities'
     
       - script: |
-            npm run lint
+            npx ng lint
         continueOnError: false
         displayName: 'Verify code standards with lint'
 

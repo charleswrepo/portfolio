@@ -128,6 +128,9 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
+            "name": "charleswrepo",
+            "email": "webmaster@example.com",
+            "repo": "git@github.com:charleswrepo/portfolio.git"
           }
         }
       }

@@ -38,6 +38,8 @@ steps:
         displayName: 'Verify code standards with lint'
 
       - script: |
+            git config user.email='crwatson@live.co.uk'
+            git config user.name='charleswrepo'
             npm run deploy
         continueOnError: false
         displayName: 'Publish to GitHub Pages'

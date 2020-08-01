@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng deploy --no-silent"
+    "deploy": "git config --add url.'git@github.com:'.insteadOf 'https://github.com/' git config user.email 'crwatson@live.co.uk' git config user.name 'charleswrepo' ng deploy --no-silent"
   },
   "private": false,
   "devDependencies": {

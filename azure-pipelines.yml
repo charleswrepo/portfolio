@@ -24,16 +24,15 @@ steps:
     
       - script: |
             npm install -g @angular/cli
-            npm install -g @angular-devkit/build-angular
             npm install
         continueOnError: false
         displayName: 'Install Angular'
 
-      - script:
-            npm install -g angular-cli-ghpages
+      - script: |
+            npm install -g @angular-devkit/build-angular
             npm install
         continueOnError: false
-        displayName: 'Install angular-cli-ghpages'
+        displayName: 'Install Angular Devkit'
     
       - script: |
             npm audit --audit-level=moderate --registry=https://registry.npmjs.org/
@@ -41,16 +40,13 @@ steps:
         displayName: 'Audit dependency vulnerabilities'
     
       - script: |
-            npx ng lint
+            npm run lint
         continueOnError: false
         displayName: 'Verify code standards with lint'
-
-      - script:
-            npm run deploy --buildHref='https://charleswrepo.github.io/portfolio'
-        continueOnError: false
-        displayName: 'Deploy to GitHub Pages'
     
       - task: PublishBuildArtifacts@1
         inputs:
-            PathtoPublish: '$(System.DefaultWorkingDirectory)'
-            ArtifactName: 'My Portfolio'
+            PathtoPublish: 'dist/my-portfolio'
+            ArtifactName: 'my-portfolio'
+            publishLocation: 'Container'
+        displayName: 'Publish Artifacts'

@@ -8,12 +8,11 @@ trigger:
   branches:
     include:
     - master
-
     exclude:
     - gh-pages
 
 pool:
-  vmImage: "windows-latest"
+  vmImage: "ubuntu-latest"
 
 steps:
       - task: NodeTool@0
@@ -23,16 +22,11 @@ steps:
         displayName: 'Install Node.js'
     
       - script: |
+            npm cache clean --force
             npm install -g @angular/cli
             npm install
         continueOnError: false
         displayName: 'Install Angular'
-
-      - script: |
-            npm install -g @angular-devkit/build-angular
-            npm install
-        continueOnError: false
-        displayName: 'Install Angular Devkit'
     
       - script: |
             npm audit --audit-level=moderate --registry=https://registry.npmjs.org/

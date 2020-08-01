@@ -22,7 +22,6 @@ steps:
         displayName: 'Install Node.js'
     
       - script: |
-            npm cache clean --force
             npm install -g @angular/cli
             npm install
         continueOnError: false
@@ -40,7 +39,7 @@ steps:
     
       - task: PublishBuildArtifacts@1
         inputs:
-            PathtoPublish: 'dist/my-portfolio'
+            PathtoPublish: '$(Build.ArtifactStagingDirectory)'
             ArtifactName: 'my-portfolio'
             publishLocation: 'Container'
         displayName: 'Publish Artifacts'

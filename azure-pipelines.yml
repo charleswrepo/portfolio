@@ -37,9 +37,8 @@ steps:
         continueOnError: false
         displayName: 'Verify code standards with lint'
     
-      - task: PublishBuildArtifacts@1
+      - task: PublishPipelineArtifact@1
         inputs:
-            PathtoPublish: '$(System.DefaultWorkingDirectory)'
+            targetPath: '$(System.DefaultWorkingDirectory)'
             ArtifactName: 'my-portfolio'
-            publishLocation: 'Container'
         displayName: 'Publish Artifacts'

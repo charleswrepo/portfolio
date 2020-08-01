@@ -38,7 +38,7 @@ steps:
         displayName: 'Verify code standards with lint'
 
       - script: |
-            npm run deploy --base-href="charleswrepo.github.io/portfolio --no-silent"
+            npm run deploy
         continueOnError: false
         displayName: 'Publish to GitHub Pages'
     

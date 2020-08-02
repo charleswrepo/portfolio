@@ -130,7 +130,7 @@
           "options": {
             "name": "charleswrepo",
             "email": "webmaster@example.com",
-            "repo": "ssh://git@github.com:charleswrepo/portfolio.git"
+            "repo": "git@github.com:charleswrepo/portfolio.git"
           }
         }
       }

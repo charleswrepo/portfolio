@@ -130,7 +130,7 @@
           "options": {
             "name": "charleswrepo",
             "email": "webmaster@example.com",
-            "repo": "https://charleswrepo:$(github_test)@github.com/charleswrepo/portfolio.git"
+            "repo": "https://charleswrepo:$(github_pat)@github.com/charleswrepo/portfolio.git"
           }
         }
       }

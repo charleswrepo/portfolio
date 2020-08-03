@@ -36,6 +36,19 @@ steps:
             npm run lint
         continueOnError: false
         displayName: 'Verify code standards with lint'
+
+      - task: DownloadSecureFile@1
+        inputs:
+          secureFile: 'id_rsa'
+        displayName: 'Preparing private key'
+
+      - task: InstallSSHKey@0
+        inputs:
+          knownHostsEntry: $(gh_host)
+          sshPublicKey: $(public_key)
+          sshPassphrase: $(ssh_passphrase)
+          sshKeySecureFile: 'id_rsa'
+        displayName: 'Installing SSH key'
         
       - script: |
             npm run deploy

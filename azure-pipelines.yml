@@ -41,7 +41,7 @@ steps:
         inputs:
           secureFile: 'id_rsa'
         continueOnError: false
-        displayName: 'Preparing private key'
+        displayName: 'Prepare SSH secure file'
 
       - task: InstallSSHKey@0
         inputs:
@@ -50,12 +50,12 @@ steps:
           sshPassphrase: $(ssh_passphrase)
           sshKeySecureFile: 'id_rsa'
         continueOnError: false
-        displayName: 'Installing SSH key'
+        displayName: 'Install SSH key'
         
       - script: |
             npm run deploy
         continueOnError: false
-        displayName: 'Publish to GitHub Pages'
+        displayName: 'Deploy to GitHub Pages'
     
       - task: PublishPipelineArtifact@1
         inputs:

@@ -131,7 +131,7 @@
             "name": "charleswrepo",
             "email": "webmaster@example.com",
             "repo": "git@github.com:charleswrepo/portfolio.git",
-            "baseHref": "/portfolio/"
+            "baseHref": "https://charleswrepo.github.io/portfolio/"
           }
         }
       }

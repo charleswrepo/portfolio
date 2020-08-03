@@ -40,6 +40,7 @@ steps:
       - task: DownloadSecureFile@1
         inputs:
           secureFile: 'id_rsa'
+        continueOnError: false
         displayName: 'Preparing private key'
 
       - task: InstallSSHKey@0
@@ -48,6 +49,7 @@ steps:
           sshPublicKey: $(public_key)
           sshPassphrase: $(ssh_passphrase)
           sshKeySecureFile: 'id_rsa'
+        continueOnError: false
         displayName: 'Installing SSH key'
         
       - script: |
@@ -59,4 +61,5 @@ steps:
         inputs:
             targetPath: '$(System.DefaultWorkingDirectory)'
             ArtifactName: 'my-portfolio'
+        continueOnError: false
         displayName: 'Publish Artifacts'

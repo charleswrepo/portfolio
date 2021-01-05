@@ -69,7 +69,9 @@
             "browserTarget": "my-portfolio:build",
             "ssl": true,
             "sslCert": "server.crt",
-            "sslKey": "server.key"
+            "sslKey": "server.key",
+            "open": true,
+            "port": 4200
           },
           "configurations": {
             "production": {

@@ -8,4 +8,28 @@ import { Component } from '@angular/core';
 
 export class JobHistoryComponent {
     pageTitle: string = 'Job History';
+    jobs: any[] = [
+        {
+            jobId: 1,
+            jobRole: 'Test Analyst',
+            jobCompany: 'StepChange Debt Charity',
+            jobLocation: 'Leeds',
+            jobSite: 'https://www.stepchange.org/about-us/what-we-do.aspx',
+            jobStartDate: 'May 2017',
+            jobEndDate: 'Present',
+            jobInfo: 'Lorum ipsum StepChange',
+            jobLogo: 'assets/images/jobs/stepchange-logo.jpg'
+        },
+        {
+            jobId: 2,
+            jobRole: 'System Tester',
+            jobCompany: 'Skipton Building Society',
+            jobLocation: 'Skipton (Head Office)',
+            jobSite: 'https://www.skipton.co.uk/about-us',
+            jobStartDate: 'August 2015',
+            jobEndDate: 'September 2016',
+            jobInfo: 'Lorum ipsum Skipton',
+            jobLogo: 'assets/images/jobs/sbs-logo.jpg'
+        }
+    ];
 }

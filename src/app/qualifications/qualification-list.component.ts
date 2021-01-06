@@ -9,5 +9,4 @@ import { Component } from '@angular/core';
 export class QualificationListComponent {
     pageTitle: string = 'Qualification List';
     qualifications: any[];
-    
 }

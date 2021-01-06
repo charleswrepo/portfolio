@@ -7,5 +7,5 @@ import { Component } from "@angular/core";
 })
 
 export class JobHistoryComponent {
-    pageTitle: string = 'Job History'
+    pageTitle: string = 'Job History';
 }

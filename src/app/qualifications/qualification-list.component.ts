@@ -11,7 +11,7 @@ export class QualificationListComponent {
     imgWidth: 3;
     imgHeight: 3;
     imgMargin: 2;
-    toggleQuals: false;
+    toggleQuals: boolean = false;
     qualifications: any[] = [
         {
             qualId: 0,

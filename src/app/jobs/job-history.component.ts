@@ -11,7 +11,7 @@ export class JobHistoryComponent {
     imgWidth: 3;
     imgHeight: 3;
     imgMargin: 2;
-    toggleJobs: false;
+    toggleJobs: boolean = false;
     jobs: any[] = [
         {
             jobId: 1,

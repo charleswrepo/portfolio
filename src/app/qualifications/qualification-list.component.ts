@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
     selector: 'mp-qualifications',
@@ -7,7 +7,11 @@ import { Component } from '@angular/core';
 })
 
 export class QualificationListComponent {
-    pageTitle: string = 'Qualification List';
+    pageTitle: 'Qualification List';
+    imgWidth: 3;
+    imgHeight: 3;
+    imgMargin: 2;
+    toggleQuals: false;
     qualifications: any[] = [
         {
             qualId: 0,
@@ -23,7 +27,7 @@ export class QualificationListComponent {
         {
             qualId: 1,
             qualName: 'ISTQB Foundation Level',
-            qualPlace: 'Skipton Building Society Head Office',
+            qualPlace: 'Skipton Building Society',
             qualSite: 'https://www.skipton.co.uk/about-us',
             qualStartYear: 2015,
             qualEndYear: 2016,
@@ -76,4 +80,8 @@ export class QualificationListComponent {
             qualLogo: 'assets/images/qualifications/msm-logo.jpg'
         }
     ];
+
+    toggleQualificationSection(): void{
+        this.toggleQuals = !this.toggleQuals;
+    }
 }

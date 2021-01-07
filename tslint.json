@@ -66,8 +66,7 @@
     "no-empty": false,
     "no-inferrable-types": [
       true,
-      "ignore-params",
-      "ignore-properties"
+      "ignore-params"
     ],
     "no-non-null-assertion": true,
     "no-redundant-jsdoc": true,

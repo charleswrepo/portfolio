@@ -1,29 +1,34 @@
 <div>
-    <div>
-        <h2>{{pageTitle}}</h2>
-    </div>
-    <div>
-        <table *ngIf='qualifications && qualifications.length'>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Course</th>
-                    <th>Grade</th>
-                    <th>Qualification</th>
-                    <th>Place Achieved</th>
-                    <th>Date Achieved</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor='let qualification of qualifications'>
-                    <td><a href={{qualification.qualSite}}><img src={{qualification.qualLogo}}></a></td>
-                    <td>{{qualification.qualName}}</td>
-                    <td>{{qualification.qualGrade}}</td>
-                    <td>{{qualification.qualType}}</td>
-                    <td>{{qualification.qualPlace}}</td>
-                    <td>{{qualification.qualStartYear}} - {{qualification.qualEndYear}}</td>
-                </tr>
-            </tbody>
-        </table>
+    <button (click)='toggleQualificationSection()'>Show/Hide Qualifications</button>
+    <div *ngIf='toggleQuals true'>
+        <div>
+            <h2>{{pageTitle}}</h2>
+        </div>
+        <div>
+            <table *ngIf='qualifications && qualifications.length'>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Course</th>
+                        <th>Grade</th>
+                        <th>Qualification</th>
+                        <th>Place Achieved</th>
+                        <th>Date Achieved</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let qualification of qualifications'>
+                        <td><a [href]='qualification.qualSite'>
+                            <img [src]='qualification.qualLogo' [title]='qualification.qualPlace'>
+                        </a></td>
+                        <td>{{qualification.qualName}}</td>
+                        <td>{{qualification.qualGrade}}</td>
+                        <td>{{qualification.qualType}}</td>
+                        <td>{{qualification.qualPlace}}</td>
+                        <td>{{qualification.qualStartYear}} - {{qualification.qualEndYear}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

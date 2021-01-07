@@ -9,8 +9,8 @@ import { QualificationListComponent } from './qualifications/qualification-list.
 @NgModule({
   declarations: [
     AppComponent,
-    JobHistoryComponent,
-    QualificationListComponent
+    QualificationListComponent,
+    JobHistoryComponent
   ],
   imports: [
     BrowserModule,

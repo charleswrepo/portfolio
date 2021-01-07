@@ -1,27 +1,32 @@
 <div>
-    <div>
-        <h2>{{pageTitle}}</h2>
-    </div>
-    <div>
-        <table *ngIf='jobs && jobs.length'>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Role</th>
-                    <th>Company</th>
-                    <th>Location</th>
-                    <th>Dates</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor='let job of jobs'>
-                    <td><a href={{job.jobSite}}><img src={{job.jobLogo}}></a></td>
-                    <td>{{job.jobRole}}</td>
-                    <td>{{job.jobCompany}}</td>
-                    <td>{{job.jobLocation}}</td>
-                    <td>{{job.jobStartDate}} - {{job.jobEndDate}}</td>
-                </tr>
-            </tbody>
-        </table>
+    <button (click)='toggleJobHistorySection()'>Show/Hide Job History</button>
+    <div *ngIf='toggleJobs true'>
+        <div>
+            <h2>{{pageTitle}}</h2>
+        </div>
+        <div>
+            <table *ngIf='jobs && jobs.length'>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Role</th>
+                        <th>Company</th>
+                        <th>Location</th>
+                        <th>Dates</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let job of jobs'>
+                        <td><a [href]='job.jobSite'>
+                            <img [src]='job.jobLogo' [title]='job.jobCompany'>
+                        </a></td>
+                        <td>{{job.jobRole}}</td>
+                        <td>{{job.jobCompany}}</td>
+                        <td>{{job.jobLocation}}</td>
+                        <td>{{job.jobStartDate}} - {{job.jobEndDate}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

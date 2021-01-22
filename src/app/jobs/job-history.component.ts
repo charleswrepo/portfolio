@@ -11,7 +11,6 @@ export class JobHistoryComponent {
     imgWidth: 3;
     imgHeight: 3;
     imgMargin: 2;
-    toggleJobs: boolean = false;
     jobs: any[] = [
         {
             jobId: 1,
@@ -36,8 +35,4 @@ export class JobHistoryComponent {
             jobLogo: 'assets/images/jobs/sbs-logo.jpg'
         }
     ];
-
-    toggleJobHistorySection(): void {
-        this.toggleJobs = !this.toggleJobs;
-    }
 }

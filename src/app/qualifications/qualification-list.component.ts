@@ -11,7 +11,6 @@ export class QualificationListComponent {
     imgWidth: 3;
     imgHeight: 3;
     imgMargin: 2;
-    toggleQuals: boolean = false;
     qualifications: any[] = [
         {
             qualId: 0,
@@ -80,8 +79,4 @@ export class QualificationListComponent {
             qualLogo: 'assets/images/qualifications/msm-logo.jpg'
         }
     ];
-
-    toggleQualificationSection(): void{
-        this.toggleQuals = !this.toggleQuals;
-    }
 }
